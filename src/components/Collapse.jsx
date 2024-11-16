@@ -1,45 +1,33 @@
 import PropTypes from 'prop-types';
 import React from 'react';
 
-class Collapse extends React.Component{
+class Collapse extends React.Component {
 
-    constructor(){
-        super();
-        this.state = {
-            showContent: false
-        }
-
-        // ******** 1 ******** \\
-        // this.showMore = () =>{
-        //     this.setState({showContent: true})
-        //     console.log(this)
-        // }
-
-        // ******** 2 ******** \\
-        // this.showMore = this.showMore.bind(this)
-    }
-
-    // ******** 2 ******** \\
-    // showMore()){
-    //     this.setState({showContent: true})
-    // }
-
+    state = { showContent: false };
 
     showMore = () => {
-        this.setState({showContent: !this.state.showContent})
+        this.setState({ showContent: !this.state.showContent })
     }
 
-    render(){
+    // componentDidMount(){
+    //     console.log("Component is created");
+    // }
+
+    // componentDidUpdate(){
+    //     console.log("Component is updated");
+    // }
+
+    render() {
         return (
             <div>
                 <div>
                     <button className="btn btn-primary w-100" onClick={this.showMore}>
-                        Link with href
+                        {React.Children.map(this.props.children, children => children.props.text)}
                     </button>
                     {
                         this.state.showContent ? (
                             <div className="collapse show">
-                                {this.props.children}
+                                {React.Children.map(this.props.children, children => children)}
                             </div>
                         ) : null
                     }

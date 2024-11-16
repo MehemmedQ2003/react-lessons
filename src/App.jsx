@@ -19,7 +19,7 @@ function App() {
           </div>
           <div className='col p-3'>
             <Collapse href="collapseExample3">
-              <Card title="title 3" text="Card Text 3" button="Click me 3" image="https://picsum.photos/id/3/200/200" />
+              <Card title="Title 3" text="Card Text 3" button="Click me 3" image="https://picsum.photos/id/3/200/200" />
             </Collapse>
           </div>
         </div>

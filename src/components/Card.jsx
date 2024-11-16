@@ -26,7 +26,7 @@ Card.propTypes = {
 };
 
 Card.defaultProps = {
-    title: "Default Props title"
+    title: "Default Card title"
 }
 
 export default Card
